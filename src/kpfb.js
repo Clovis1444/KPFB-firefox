@@ -1,7 +1,7 @@
 class kpfb {
     static #FB_URL = "https://flicksbar.mom"
-    static #PARENT1_ID = "umdel3online_button_desktop"
-    static #PARENT2_CLASSNAME = "styles_buttonsContainer__i6y3F"
+    static #PARENT1() { return document.querySelector('html > body > div > div > div:nth-of-type(2) > main > div > div:nth-of-type(2) > div > div:nth-of-type(3) > div > div > div > div > div > div:nth-of-type(2) > div:nth-of-type(2) > div') }
+    static #PARENT2() { return document.querySelector("html > body > div > div > div:nth-of-type(2) > main > div > div:nth-of-type(2) > div > div:nth-of-type(3) > div > div > div > div > div > div:nth-of-type(2) > div") }
 
     static #BUTTON_ONCLICK() {
         try {
@@ -54,7 +54,7 @@ class kpfb {
 
         kpfb_button.onclick = this.#BUTTON_ONCLICK
 
-        const parent = document.getElementById(this.#PARENT1_ID) || document.getElementsByClassName(this.#PARENT2_CLASSNAME)[0]
+        const parent = this.#PARENT1() ?? this.#PARENT2()
         parent.appendChild(kpfb_button)
     }
 }
