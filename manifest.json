@@ -1,0 +1,30 @@
+{
+    "manifest_version": 2,
+    "name": "KPFB",
+    "version": "0.0.1",
+    "description": "Quick redirrect to Flickbar from Kinopoisk.",
+    "icons": {
+        "48": "icons/kpfb-48.svg"
+    },
+    "permissions": [
+        "tabs"
+    ],
+    "background": {
+        "scripts": [
+            "src/openFb.js"
+        ]
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "*://*.kinopoisk.ru/film/*"
+            ],
+            "js": [
+                "src/kpfb.js"
+            ]
+        }
+    ],
+    "web_accessible_resources": [
+        "icons/kpfb-48.png"
+    ]
+}
