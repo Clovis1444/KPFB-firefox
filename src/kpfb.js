@@ -1,7 +1,8 @@
 class kpfb {
     static #FB_URL = "https://flicksbar.mom"
-    static #PARENT1() { return document.querySelector('html > body > div > div > div:nth-of-type(2) > main > div > div:nth-of-type(2) > div > div:nth-of-type(3) > div > div > div > div > div > div:nth-of-type(2) > div:nth-of-type(2) > div') }
+    static #PARENT1() { return document.querySelector("html > body > div > div > div:nth-of-type(2) > main > div > div:nth-of-type(2) > div > div:nth-of-type(3) > div > div > div > div > div > div:nth-of-type(2) > div:nth-of-type(2) > div") }
     static #PARENT2() { return document.querySelector("html > body > div > div > div:nth-of-type(2) > main > div > div:nth-of-type(2) > div > div:nth-of-type(3) > div > div > div > div > div > div:nth-of-type(2) > div") }
+    static #PARENT3() { return document.querySelector("html > body > div > div > div:nth-of-type(2) > div:nth-of-type(2) > div:nth-of-type(2) > div > div:nth-of-type(3) > div > div > div > div > div > div:nth-of-type(2) > div") }
 
     static #BUTTON_ONCLICK() {
         try {
@@ -55,7 +56,7 @@ class kpfb {
 
         kpfb_button.onclick = this.#BUTTON_ONCLICK
 
-        const parent = this.#PARENT1() ?? this.#PARENT2()
+        const parent = this.#PARENT1() ?? this.#PARENT2() ?? this.#PARENT3()
         parent.appendChild(kpfb_button)
     }
 }
